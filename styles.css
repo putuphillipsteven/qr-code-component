@@ -1,14 +1,21 @@
-body {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  max-width: 1440px;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
   background-color: hsl(212, 45%, 89%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   font-family: "Lato", sans-serif;
+  padding: 16px;
 }
 
 main.qrCodeContainer {
@@ -19,42 +26,46 @@ main.qrCodeContainer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 320px;
+  min-height: 280px;
   border-radius: 16px;
-  padding: 24px 0px;
+  padding: 8px;
+  overflow: hidden;
 }
 
 .qrCode img {
-  width: 90%;
+  width: 100%;
   border-radius: 16px;
 }
 
-section.qrCode {
-  margin: 8px;
-}
-
 .qrCodeText {
-  max-width: 90%;
+  padding: 12px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
-section.qrCodeText h3 {
+section.qrCodeText h1 {
+  font-size: 20px;
   font-weight: 700;
-  margin-top: 8px;
-  margin-bottom: -16px;
+  margin-bottom: 8px;
 }
-section.qrCodeText h6 {
+section.qrCodeText p {
+  font-size: 12px;
   font-weight: 400;
+  width: 90%;
 }
-
+section.attribution {
+  font-size: 12px;
+  margin-top: 16px;
+  text-align: center;
+}
 /* MEDIA QUERY */
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   body {
-    margin: 0;
-    padding: 0;
-    max-width: 375px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 16px;
+  }
+  main {
+    max-width: 100%;
   }
 }
